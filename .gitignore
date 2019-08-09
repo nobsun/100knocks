@@ -1,0 +1,7 @@
+.stack-work/
+100knocks.cabal
+error.log
+core
+*.hi
+*.o
+*~
