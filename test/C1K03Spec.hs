@@ -1,15 +1,14 @@
 {-# LANGUAGE OverloadedStrings #-}
-module LibSpec
+module C1K03Spec
   ( spec
   ) where
 
 import Data.String
 import qualified Codec.Binary.UTF8.String as U
 import qualified Data.ByteString as B
-import Test.Main
 import Test.Hspec
 import Text.Show.Unicode
-import Lib
+import C1K03
 
 newtype UString a = UString a deriving Eq
 
@@ -23,11 +22,8 @@ instance Show a => Show (UString a) where
   show (UString s) = ushow s
 
 spec :: Spec
-spec = describe "someFunc" $ do
-  { it "「なんか関数」を標準出力に印字する." $ do
-    { result <- captureProcessResult Lib.someFunc
-    ; prExitCode result `shouldBe` ExitSuccess
-    ; prStderr result `shouldSatisfy` B.null
-    ; ustring (prStdout result) `shouldBe` "なんか関数\n"
+spec = describe "円周率" $ do
+  { it "\"Now I need a drink, alcoholic of course, after the heavy lectures involving quantum mechanics.\"から円周率へ" $ do
+    { 円周率 `shouldBe` [3,1,4,1,5,9,2,6,5,3,5,8,9,7,9]
     }
   }
