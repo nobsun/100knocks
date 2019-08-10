@@ -28,6 +28,11 @@ dependencies:
 - utf8-string
 - hspec
 - main-tester
+- containers
+- random
+- random-shuffle
+
+data-dir: data
 
 library:
   source-dirs: src
