@@ -5,14 +5,14 @@ import Data.Text (Text)
 import qualified Data.Text as T
 
 {- |
-   str = "stressed" を逆順にならべた文字列
->>> rev
+   stressed = "stressed" を逆順にならべた文字列
+>>> desserts
 "desserts"
->>> T.reverse rev == str
+>>> T.reverse desserts == stressed
 True
 -}
-rev :: Text
-rev = T.reverse str
+desserts :: Text
+desserts = T.reverse stressed
 
-str :: Text
-str = "stressed"
+stressed :: Text
+stressed = "stressed"

@@ -1,7 +1,8 @@
 {-# LANGUAGE OverloadedStrings #-}
 module C1K03 where
 
-import Data.Char
+import Data.Char (isAlpha)
+import Data.List (unfoldr)
 import Data.Text (Text)
 import qualified Data.Text as T
 
@@ -13,7 +14,12 @@ import qualified Data.Text as T
 -}
 
 円周率 :: [Int]
-円周率 = map (T.length . T.filter isAlpha) $ T.words sentense
+円周率 = unfoldr psi sentense
+  where
+    psi t = case T.dropWhile (not . isAlpha) t of
+      "" -> Nothing
+      u  -> case T.span isAlpha u of
+        (v, w) -> Just (T.length v, w)
 
 sentense :: Text
 sentense = "Now I need a drink, alcoholic of course, after the heavy lectures involving quantum mechanics."

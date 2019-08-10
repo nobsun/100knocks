@@ -14,15 +14,14 @@ True
 パタトクカシーー = interleave パトカー タクシー
 
 interleave :: Text -> Text -> Text
-interleave "" "" = ""
-interleave tts uus = t `T.append` u `T.append` interleave ts us
+interleave t u = T.unfoldr psi (t, u)
   where
-    (t, ts) = T.splitAt 1 tts
-    (u, us) = T.splitAt 1 uus
+    psi (p, q)  = case T.uncons p of
+      Nothing     -> Nothing
+      Just (c, v) -> Just (c, (q, v))
 
 パトカー :: Text
 パトカー = "パトカー"
 
 タクシー :: Text
 タクシー = "タクシー"
-

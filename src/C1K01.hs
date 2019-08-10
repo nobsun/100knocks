@@ -11,15 +11,11 @@ import qualified Data.Text as T
 True
 -}
 パトカー :: Text
-パトカー = takeAtOdd パタトクカシーー
-
-takeAtOdd :: Text -> Text
-takeAtOdd "" = ""
-takeAtOdd ts = T.take 1 ts `T.append` dropAtEven (T.drop 1 ts)
-
-dropAtEven :: Text -> Text
-dropAtEven "" = ""
-dropAtEven ts = takeAtOdd (T.drop 1 ts)
+パトカー = T.unfoldr psi パタトクカシーー
+  where
+    psi t = case T.uncons t of
+      Nothing     -> Nothing
+      Just (c, u) -> Just (c, T.tail u)
 
 パタトクカシーー :: Text
 パタトクカシーー = "パタトクカシーー"
