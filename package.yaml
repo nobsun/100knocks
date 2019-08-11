@@ -31,6 +31,7 @@ dependencies:
 - containers
 - random
 - random-shuffle
+- process
 
 data-dir: data
 
@@ -47,7 +48,6 @@ tests:
     # - -with-rtsopts=-N
     dependencies:
     - 100knocks
-    - hspec
 
   100knocks-doctest:
     main:                doctests.hs
