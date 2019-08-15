@@ -19,4 +19,8 @@ main = doctest ["src/C1K00.hs"
                ,"src/C2K13.hs"
                ,"src/C2K14.hs"
                ,"src/C2K15.hs"
+               ,"src/C2K16.hs"
+               ,"src/C2K17.hs"
+               ,"src/C2K18.hs"
+               ,"src/C2K19.hs"
                ]

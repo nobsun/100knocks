@@ -32,6 +32,10 @@ dependencies:
 - random
 - random-shuffle
 - process
+- filepath
+- directory
+- optparse-declarative
+- ghc-prim
 
 data-dir: data
 
