@@ -35,7 +35,9 @@ dependencies:
 - filepath
 - directory
 - optparse-declarative
-- ghc-prim
+- aeson
+- vector
+- unordered-containers
 
 data-dir: data
 
